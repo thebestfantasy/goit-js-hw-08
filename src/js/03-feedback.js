@@ -7,14 +7,9 @@ const refs = {
 };
 
 const STORAGE_KEY = 'feedback-form-state';
-const formData = {};
 
 refs.form.addEventListener("submit", onFormSubmit);
 refs.form.addEventListener("input", throttle(onTextAreaInput, 500));
-// refs.form.addEventListener('input', evt => {
-//     formData[evt.target.name] = evt.target.value;
-//     console.log(formData);
-// })
 
 localMessage();
 
