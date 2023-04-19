@@ -9,7 +9,7 @@ const refs = {
 const STORAGE_KEY = 'feedback-form-state';
 
 refs.form.addEventListener("submit", onFormSubmit);
-refs.form.addEventListener("input", throttle(onTextAreaInput, 500));
+refs.form.addEventListener("input", throttle(onFormInput, 500));
 
 localMessage();
 
@@ -19,7 +19,7 @@ function onFormSubmit(evt) {
     localStorage.removeItem(STORAGE_KEY); 
 }
 
-function onTextAreaInput() {
+function onFormInput() {
     const formInp = { email: refs.emailInput.value, message: refs.textarea.value };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formInp));
 }
