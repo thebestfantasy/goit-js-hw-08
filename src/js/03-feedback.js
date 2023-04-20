@@ -15,8 +15,14 @@ localMessage();
 
 function onFormSubmit(evt) {
     evt.preventDefault();
+    if (refs.emailInput.value.trim() === "" || refs.textarea.value.trim() === "") {
+        return alert("Заповни всі поля, будь ласка!");
+    }
+    else {
+    console.log({ email: refs.emailInput.value, message: refs.textarea.value });
     evt.target.reset(); 
-    localStorage.removeItem(STORAGE_KEY); 
+    localStorage.removeItem(STORAGE_KEY);
+    }
 }
 
 function onFormInput() {
